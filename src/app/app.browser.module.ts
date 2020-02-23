@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,22 +14,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { UsageComponent } from './usage/usage.component';
 import { ListComponent } from './list/list.component';
-import { CommonModule } from '@angular/common';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { AppModule } from './app.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    RandomizerComponent,
-    OutcomesComponent,
-    AboutComponent,
-    UsageComponent,
-    ListComponent
-  ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    
     AppRoutingModule,
     BrowserAnimationsModule,
     ModalModule.forRoot(),
@@ -37,9 +26,8 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule,
-    TransferHttpCacheModule,
-    NgtUniversalModule
+    AppModule,
+    BrowserTransferStateModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -48,4 +36,4 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
     OutcomesComponent
   ]
 })
-export class AppModule { }
+export class AppBrowserModule { }

@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import {BsModalRef} from 'ngx-bootstrap';
 import {OutcomeService} from './services/outcome.service';
 import {OutcomeModel} from './models/outcome.model';
+import { LOCAL_STORAGE } from '@ng-toolkit/universal';
 
 @Component({
   selector: 'app-randomizer',
@@ -12,7 +13,7 @@ export class RandomizerComponent implements OnInit {
   outcome: any = {title: '', description: ''};
   outcomes: OutcomeModel[];
 
-  constructor(public bsModalRef: BsModalRef, private outcomeService: OutcomeService) {
+  constructor(@Inject(LOCAL_STORAGE) private localStorage: any, public bsModalRef: BsModalRef, private outcomeService: OutcomeService) {
   }
 
   ngOnInit() {
@@ -29,9 +30,9 @@ export class RandomizerComponent implements OnInit {
 
   // Retrieve all Outcomes from the user's local storage
   getOutcomesFromLocalStorage() {
-    if (JSON.parse(localStorage.getItem('outcomes'))) {
-      const localStorageOutcomes = JSON.parse(localStorage.getItem('outcomes'));
-      for (const outcome of localStorageOutcomes) {
+    if (JSON.parse(this.localStorage.getItem('outcomes'))) {
+      this.localStorage = JSON.parse(this.localStorage.getItem('outcomes'));
+      for (const outcome of this.localStorage) {
         this.outcomes.push(outcome);
       }
       this.randomize();
