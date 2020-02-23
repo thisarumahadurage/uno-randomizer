@@ -1,0 +1,45 @@
+$secondary: #F8DA27;
+
+.logo {
+  height: 70px;
+  margin-bottom: 2rem;
+}
+
+.btn-start {
+  margin: 2rem auto;
+  background: #000000;
+  height: 170px;
+  width: 170px;
+  border-radius: 100%;
+  border: 6px solid #F8DA27;
+  line-height: 164px;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.58);
+  transition: all 500ms;
+  cursor: pointer;
+  
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.btn-start:hover {
+  background: $secondary;
+  color: #000000;
+  box-shadow: 0 0 99px rgba(0, 0, 0, 0.8);
+}
+
+.software-links {
+  p {
+    cursor: pointer;
+    display: inline-block;
+    margin: 2rem 1rem;
+  }
+}
+
+footer {
+  p {
+    font-size: 0.8rem;
+  }
+}

@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+$secondary: #F8DA27;
+
+body {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  background: rgb(237, 28, 36);
+  background: linear-gradient(180deg, rgba(237, 28, 36, 1) 0%, rgba(136, 13, 17, 1) 100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #000000;
+  border-color: #000000;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  color: #000000;
+  background-color: $secondary;
+  border-color: $secondary;
+}
+
+.btn-primary:active {
+  color: #000000 !important;
+  background-color: $secondary !important;
+  border-color: $secondary !important;
+}
+
+.modal-content {
+  border-radius: 20px;
+  background-color: #000;
+}
+
+.modal-header {
+  border-bottom: none;
+
+  i {
+    color: #ffffff;
+  }
+
+  .close {
+
+    opacity: 1;
+  }
+}
+.modal-footer {
+  border-top: none;
+}
