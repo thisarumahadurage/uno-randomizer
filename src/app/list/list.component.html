@@ -1,0 +1,24 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p routerLink="/" style="cursor: pointer" class="font-weight-bold"><i class="fa fa-arrow-left"></i> Back to homepage</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Outcomes</h1>
+        <p>Listed below are the default outcomes that come pre-loaded with UNO Randomizer. For every Blank Card the player plays, he/she can change the color being played to any color (Just like a Wild Card).</p>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-4" *ngFor="let outcome of outcomes">
+        <div class="outcome">
+          <h4>{{ outcome.title }}</h4>
+          <p>{{ outcome.description }}</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>

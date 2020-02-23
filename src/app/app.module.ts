@@ -12,6 +12,8 @@ import { OutcomesComponent } from './outcomes/outcomes.component';
 import {TooltipModule} from 'ngx-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AboutComponent } from './about/about.component';
+import { UsageComponent } from './usage/usage.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     RandomizerComponent,
     OutcomesComponent,
-    AboutComponent
+    AboutComponent,
+    UsageComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
