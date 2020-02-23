@@ -23,6 +23,7 @@
   <div class="saved-outcomes">
     <h5>Saved Outcomes</h5>
     <ul style="list-style: none">
+      <li *ngIf="!outcomes.length">No Results</li>
       <li *ngFor="let outcome of outcomes; let i = index"><p>{{ outcome.title }} <i class="fa fa-times" tooltip="Delete Outcome" (click)="delete(i)"></i></p></li>
     </ul>
   </div>
