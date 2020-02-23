@@ -31,6 +31,25 @@ h1, h2, h3, h4, h5, h6 {
   border-color: $secondary !important;
 }
 
+.btn-yellow {
+  color: #000000;
+  background-color: $secondary;
+  border-color: $secondary;
+  border-radius: 10px;
+}
+
+.btn-yellow:hover {
+  color: #000000;
+  background-color: #9e891a;
+  border-color: #9e891a;
+}
+
+.btn-yellow:disabled {
+  color: #000000;
+  background-color: #eeeeee;
+  border-color: #eeeeee;
+}
+
 .modal-content {
   border-radius: 20px;
   background-color: #000;
@@ -48,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
   }
 }
+
 .modal-footer {
   border-top: none;
 }

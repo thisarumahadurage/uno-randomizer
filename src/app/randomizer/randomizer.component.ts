@@ -16,7 +16,6 @@ export class RandomizerComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log();
     this.getOutcomes();
   }
 
@@ -24,8 +23,21 @@ export class RandomizerComponent implements OnInit {
   getOutcomes() {
     this.outcomeService.getOutcomes().subscribe(res => {
       this.outcomes = res as OutcomeModel[];
-      this.randomize();
+      this.getOutcomesFromLocalStorage();
     });
+  }
+
+  // Retrieve all Outcomes from the user's local storage
+  getOutcomesFromLocalStorage() {
+    if (JSON.parse(localStorage.getItem('outcomes'))) {
+      const localStorageOutcomes = JSON.parse(localStorage.getItem('outcomes'));
+      for (const outcome of localStorageOutcomes) {
+        this.outcomes.push(outcome);
+      }
+      this.randomize();
+    } else {
+      this.randomize();
+    }
   }
 
   // Randomize the list and choose one outcome

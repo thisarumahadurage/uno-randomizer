@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Add Outcome</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times"></i>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="outcomeForm">
+    <div class="form-group">
+      <label for="title" >Title</label>
+      <input type="text" class="form-control" id="title"  placeholder="Enter Title" formControlName="title" maxlength="20">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" placeholder="Enter Description" aria-describedby="descHelp" maxlength="50" formControlName="description"></textarea>
+      <small id="descHelp" class="form-text text-muted">Describe the outcome so players can understand</small>
+    </div>
+    <button class="btn btn-yellow w-100" (click)="submit()" [disabled]="outcomeForm.invalid">Save</button>
+  </form>
+
+  <hr>
+
+  <div class="saved-outcomes">
+    <h5>Saved Outcomes</h5>
+    <ul style="list-style: none">
+      <li *ngFor="let outcome of outcomes; let i = index"><p>{{ outcome.title }} <i class="fa fa-times" tooltip="Delete Outcome" (click)="delete(i)"></i></p></li>
+    </ul>
+  </div>
+</div>

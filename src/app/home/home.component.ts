@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {RandomizerComponent} from '../randomizer/randomizer.component';
+import {OutcomesComponent} from '../outcomes/outcomes.component';
 
 @Component({
   selector: 'app-home',
@@ -17,5 +18,9 @@ export class HomeComponent implements OnInit {
 
   openStartModal() {
     this.modalRef = this.modalService.show(RandomizerComponent);
+  }
+
+  openOutcomeDialog() {
+    this.modalRef = this.modalService.show(OutcomesComponent);
   }
 }

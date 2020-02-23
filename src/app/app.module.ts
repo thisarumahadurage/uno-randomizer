@@ -8,24 +8,34 @@ import { HomeComponent } from './home/home.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RandomizerComponent } from './randomizer/randomizer.component';
 import {HttpClientModule} from '@angular/common/http';
+import { OutcomesComponent } from './outcomes/outcomes.component';
+import {TooltipModule} from 'ngx-bootstrap';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RandomizerComponent
+    RandomizerComponent,
+    OutcomesComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ModalModule.forRoot(),
-    HttpClientModule
+    TooltipModule.forRoot(),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    RandomizerComponent
+    RandomizerComponent,
+    OutcomesComponent
   ]
 })
 export class AppModule { }
