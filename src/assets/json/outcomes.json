@@ -1,14 +1,26 @@
 [
   {
-    "title": "Ruthy",
-    "description": "Cross-group local pricing structure"
+    "title": "Grenade",
+    "description": "Every other player should draw one card except the player"
   },
   {
-    "title": "Garreth",
-    "description": "Configurable directional structure"
+    "title": "Picker",
+    "description": "Next player should pick one card from Player's Hand. Next Player skips turn"
   },
   {
-    "title": "Jobyna",
-    "description": "Synergistic even-keeled database"
+    "title": "Draw 2",
+    "description": "Next player Draw 2 Cards. Next Player skips turn"
+  },
+  {
+    "title": "Snipe",
+    "description": "Choose anyone to Draw 2 Cards"
+  },
+  {
+    "title": "Suicide Bomber",
+    "description": "You draw 2 cards"
+  },
+  {
+    "title": "Switcher",
+    "description": "Choose any 2 players and swap where they sit"
   }
 ]
