@@ -34,12 +34,15 @@ $secondary: #F8DA27;
   p {
     cursor: pointer;
     display: inline-block;
-    margin: 2rem 1rem;
+    margin: 0 1rem;
   }
 }
 
-footer {
-  p {
-    font-size: 0.8rem;
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  h1 {
+    font-size: 1.5rem;
   }
+
 }
+
