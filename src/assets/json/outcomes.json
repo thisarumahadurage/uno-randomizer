@@ -1,26 +1,26 @@
 [
   {
     "title": "Grenade",
-    "description": "Every other player should draw one card except the player"
+    "description": "Everyone draws 1 card except you."
   },
   {
     "title": "Picker",
-    "description": "Next player should pick one card from Player's Hand. Next Player skips turn"
+    "description": "The next player should pick one card from your hand and skips their turn."
   },
   {
     "title": "Draw 2",
-    "description": "Next player Draw 2 Cards. Next Player skips turn"
+    "description": "The next player draws 2 cards and skips their turn."
   },
   {
     "title": "Snipe",
-    "description": "Choose anyone to Draw 2 Cards"
+    "description": "Choose anyone to draw 2 cards."
   },
   {
     "title": "Suicide Bomber",
-    "description": "You draw 2 cards"
+    "description": "You draw 2 cards."
   },
   {
     "title": "Switcher",
-    "description": "Choose any 2 players and swap where they sit"
+    "description": "Choose any 2 players to swap where they sit."
   }
 ]

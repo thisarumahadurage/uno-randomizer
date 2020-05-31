@@ -1,5 +1,5 @@
 import {Component, OnInit, Inject} from '@angular/core';
-import {BsModalRef} from 'ngx-bootstrap';
+import {BsModalRef} from 'ngx-bootstrap/modal';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { LOCAL_STORAGE } from '@ng-toolkit/universal';
 

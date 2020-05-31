@@ -1,5 +1,5 @@
 import {Component, OnInit, Inject} from '@angular/core';
-import {BsModalRef} from 'ngx-bootstrap';
+import {BsModalRef} from 'ngx-bootstrap/modal';
 import {OutcomeService} from './services/outcome.service';
 import {OutcomeModel} from './models/outcome.model';
 import { LOCAL_STORAGE } from '@ng-toolkit/universal';
@@ -17,35 +17,7 @@ export class RandomizerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getOutcomes();
-  }
-
-  // Retrieve all Outcomes from the JSON file
-  getOutcomes() {
-    this.outcomeService.getOutcomes().subscribe(res => {
-      this.outcomes = res as OutcomeModel[];
-      this.getOutcomesFromLocalStorage();
-    });
-  }
-
-  // Retrieve all Outcomes from the user's local storage
-  getOutcomesFromLocalStorage() {
-    if (JSON.parse(this.localStorage.getItem('outcomes'))) {
-      this.localStorage = JSON.parse(this.localStorage.getItem('outcomes'));
-      for (const outcome of this.localStorage) {
-        this.outcomes.push(outcome);
-      }
-      this.randomize();
-    } else {
-      this.randomize();
-    }
-  }
-
-  // Randomize the list and choose one outcome
-  randomize() {
-    const randomizeUntil = this.outcomes.length;
-    const outcomeIndex = Math.floor(Math.random() * randomizeUntil);
-    this.outcome = this.outcomes[outcomeIndex];
+    console.log(this.outcome);
   }
 
 }

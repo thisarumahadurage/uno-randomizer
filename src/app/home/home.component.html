@@ -3,15 +3,15 @@
 
     <div class="row">
       <div class="col-md-12 text-center">
-        <img src="assets/img/uno-randomizer-logo.png" alt="UNO Logo" class="logo">
+        <img src="assets/img/uno-randomizer-logo.png" alt="UNO Logo" class="logo animate__animated animate__jackInTheBox">
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-7 m-auto text-center">
-        <h1>Welcome to UNO Randomizer</h1>
-        <p>Revolutionize your UNO Blank Cards with UNO Randomizer.
-          We chose the outcome for your Blank Cards.
+        <h5>UNO Randomizer v{{ version }}</h5>
+        <p>Revolutionize your UNO Blank Cards with UNO Randomizer. <br class="d-none d-md-block">
+          We chose the outcome for your Blank Cards. <br class="d-none d-md-block">
           When a player gets a Blank Wild Card Press ‘START’
       </div>
     </div>
@@ -35,6 +35,11 @@
         <p routerLink="/about">About</p>
         <p routerLink="/usage">How to Use</p>
         <p routerLink="/outcomes">List of Outcomes</p>
+        <p><a class="text-white"
+              data-name="ask"
+              data-domain="thisaru"
+              data-tld="com?subject=Feedback UNO Randomizer"
+              onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">Feedback</a></p>
       </div>
     </div>
 

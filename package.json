@@ -1,6 +1,6 @@
 {
   "name": "uno-randomizer",
-  "version": "1.1",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
@@ -15,7 +15,8 @@
     "server": "node local.js",
     "build:prod": "npm run build:ssr",
     "serve:prerender": "node static.js",
-    "build:prerender": "npm run build:prod && node dist/prerender.js"
+    "build:prerender": "npm run build:prod && node dist/prerender.js",
+    "prod": "ng build --prod"
   },
   "private": true,
   "dependencies": {
