@@ -17,7 +17,7 @@ export class RandomizerComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.outcome);
+    console.log('Outcome chosen and displayed');
   }
 
 }

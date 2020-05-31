@@ -1,7 +1,7 @@
-import {Component, OnInit, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {BsModalRef} from 'ngx-bootstrap/modal';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { LOCAL_STORAGE } from '@ng-toolkit/universal';
+import {LOCAL_STORAGE} from '@ng-toolkit/universal';
 
 @Component({
   selector: 'app-outcomes',
@@ -12,7 +12,9 @@ export class OutcomesComponent implements OnInit {
   outcomeForm: FormGroup;
   outcomes: any[] = [];
 
-  constructor(@Inject(LOCAL_STORAGE) private localStorage: any, public bsModalRef: BsModalRef, private fb: FormBuilder) {
+  constructor(@Inject(LOCAL_STORAGE) private localStorage: any,
+              public bsModalRef: BsModalRef,
+              private fb: FormBuilder) {
   }
 
   ngOnInit() {

@@ -18,15 +18,24 @@ export class HomeComponent implements OnInit {
   modalRef: BsModalRef;
   outcome: any = {title: '', description: ''};
   outcomes: OutcomeModel[];
+  isOutcomeModalOpen = false;
   i = -1;
 
   constructor(private modalService: BsModalService,
-              @Inject(LOCAL_STORAGE) private localStorage: any,
+              @Inject(LOCAL_STORAGE) public localStorage: any,
               private outcomeService: OutcomeService) {
   }
 
   ngOnInit() {
     this.getOutcomes();
+
+    // Listen for outcome modal hide event
+    this.modalService.onHide.subscribe(() => {
+      if (this.isOutcomeModalOpen) {
+        this.isOutcomeModalOpen = false;
+        this.ngOnInit();
+      }
+    });
   }
 
   // Open Start Randomizer
@@ -39,6 +48,7 @@ export class HomeComponent implements OnInit {
 
   // Open Add/View Outcome Modal
   openOutcomeDialog() {
+    this.isOutcomeModalOpen = true;
     this.modalRef = this.modalService.show(OutcomesComponent);
   }
 
@@ -52,8 +62,8 @@ export class HomeComponent implements OnInit {
 
   // Retrieve all Outcomes from the user's local storage
   getOutcomesFromLocalStorage() {
-    if (JSON.parse(this.localStorage.getItem('outcomes'))) {
-      this.localStorage = JSON.parse(this.localStorage.getItem('outcomes'));
+    if (this.outcomeService.getLocalOutcomes()) {
+      this.localStorage = this.outcomeService.getLocalOutcomes();
       for (const outcome of this.localStorage) {
         this.outcomes.push(outcome);
       }
@@ -69,7 +79,7 @@ export class HomeComponent implements OnInit {
       const j = Math.floor(Math.random() * (i + 1));
       [this.outcomes[i], this.outcomes[j]] = [this.outcomes[j], this.outcomes[i]];
     }
-    console.log(this.outcomes);
+    console.log('Outcomes shuffled');
   }
 
   // Choose outcome from the shuffled outcomes
@@ -82,4 +92,7 @@ export class HomeComponent implements OnInit {
     return this.outcomes[this.i];
   }
 
+  refrsh() {
+    this.ngOnInit();
+  }
 }
