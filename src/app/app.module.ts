@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CommonModule,
     TransferHttpCacheModule,
     NgtUniversalModule,
+    ScullyLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
